@@ -15,7 +15,7 @@ namespace Microsoft.Azure.Batch.Samples.DotNetTutorial
     using Microsoft.Azure.Batch;
     using Microsoft.Azure.Batch.Auth;
     using Microsoft.Azure.Batch.Common;
-    using Microsoft.WindowsAzure;
+    using Microsoft.Azure;
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
     using Microsoft.WindowsAzure.Storage.Blob;
@@ -27,13 +27,13 @@ namespace Microsoft.Azure.Batch.Samples.DotNetTutorial
         // These are used when constructing connection strings for the Batch and Storage client objects.
 
         // Batch account credentials
-        private const string BatchAccountName = "";
-        private const string BatchAccountKey  = "";
-        private const string BatchAccountUrl  = "";
+        private const string BatchAccountName = "batchstephle";
+        private const string BatchAccountKey  = "/++t28vcNZXBFbicV853tWZFMCYgxX6H2EoY9A8wSB3ny6viQxZYe78IXM8jQarYvJO8iVeV9diePVOo2xwP9g==";
+        private const string BatchAccountUrl  = "https://batchstephle.westus.batch.azure.com";
 
         // Storage account credentials
-        private const string StorageAccountName = "";
-        private const string StorageAccountKey  = "";
+        private const string StorageAccountName = "azuredemoready";
+        private const string StorageAccountKey  = "01NGMpIcpSfkUnwsKrzKhwoNV/Zju11VIiehK8paHOpExm/q0AeiiYtym/wG0NJb+8vFN7YJo+pNeHTYvuaJhA==";
         
         private const string PoolId = "DotNetTutorialPool";
         private const string JobId  = "DotNetTutorialJob";
@@ -112,7 +112,10 @@ namespace Microsoft.Azure.Batch.Samples.DotNetTutorial
                 @"..\..\taskdata1.txt",
                 @"..\..\taskdata2.txt",
                 @"..\..\taskdata3.txt"
+
             };
+
+
 
             // Upload the application and its dependencies to Azure Storage. This is the application that will
             // process the data files, and will be executed by each of the tasks on the compute nodes.
